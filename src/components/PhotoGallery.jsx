@@ -30,14 +30,11 @@ const PhotoGallery = () => {
             key={photo.id}
             className="photo-card"
             style={{ animationDelay: `${index * 0.1}s` }}
-            onClick={() => setSelectedPhoto(photo)}
           >
-            <div className="photo-wrapper">
+            <div className="photo-wrapper" onClick={() => setSelectedPhoto(photo)}>
               <img src={photo.src} alt={`Memory ${photo.id}`} />
-              <div className="photo-overlay">
-                <p className="photo-caption">{photo.caption}</p>
-              </div>
             </div>
+            <p className="photo-caption-below">{photo.caption}</p>
           </div>
         ))}
       </div>
